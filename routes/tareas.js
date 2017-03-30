@@ -33,4 +33,14 @@ router.get('/nueva', function(req, res, next) {
   res.render('nuevaTarea', {title: 'Nueva Tarea'});
 });
 
+router.post('/crear', function(req, res, next) {
+  var nom = req.body.nom;
+  var eti = req.body.etiquetes;
+  var rea = req.body.realització;
+  tasques.push({nom: nom,
+                etiquetes: eti,
+                realització: rea
+  });
+});
+
 module.exports = router;

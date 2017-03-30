@@ -2,18 +2,18 @@ extends layout
 
 block content
     h1 #{title}
-    form(action='/tareas', method='post')
+    form(action='/tareas/crear', method='post')
       | Nombre Tarea:
       br
-      input(type='text', name='nomTarea', required='')
+      input(type='text', name='nom', required='')
       br
       |     Etiquetas (separados por comas):
       br
-      input(type='text', name='etiquetas', required='')
+      input(type='text', name='etiquetes', required='')
       br
       |     Realització
       br
-      input(name='percent', type='number', required='')
+      input(type='number', name='realització',  min='0', max='100', value='0' required='')
       br
       br
       input(type='submit', value='Submit')
